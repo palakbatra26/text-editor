@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="editor-container">
+    <div class="toolbar">
+      <button onclick="execCommand('bold')"><b>B</b></button>
+      <button onclick="execCommand('italic')"><i>I</i></button>
+      <button onclick="execCommand('underline')"><u>U</u></button>
+      <button onclick="execCommand('justifyLeft')">Left</button>
+      <button onclick="execCommand('justifyCenter')">Center</button>
+      <button onclick="execCommand('justifyRight')">Right</button>
+      <button onclick="execCommand('insertUnorderedList')">• List</button>
+      <button onclick="execCommand('insertOrderedList')">1. List</button>
+      <select onchange="execCommandWithValue('fontSize', this.value)">
+        <option value="3">Normal</option>
+        <option value="1">Small</option>
+        <option value="5">Large</option>
+      </select>
+      <input type="color" onchange="execCommandWithValue('foreColor', this.value)">
+    </div>
+
+    <div id="editor" contenteditable="true" class="text-area">
+      Start typing here...
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
